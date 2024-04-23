@@ -1,0 +1,587 @@
+@import '04-breakpoints/index';
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+span,
+li{
+    font-family: $rubik-font;
+    margin: 0;
+}
+body{
+    padding: 0;
+    overflow-x: hidden;
+}
+main{
+    section{
+        @include card-width;
+        .header-section{
+            &__label{
+                position: relative;
+                p{
+                    color: $color-white;
+                    font-size: $txt;
+                    font-weight: $font-weight-500;
+                    left: 0;
+                    line-height: 35px;
+                    position: absolute;           
+                    right: 0;
+                    text-align: center;
+                    text-transform: uppercase;
+                    z-index: 2;
+                    @include respond-below(sm){
+                        font-size: $mobile-label-font;
+                        line-height: 20px;
+                        transform: translate(6%);
+                    }
+                    @include respond-between(xs, sm){
+                        font-size: $mobile-txt;
+                        transform: translate(12%);
+                    }
+                    &::after{
+                        background-image: url(#{$imgPath}/bg-label.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        content: '';
+                        display: block;
+                        height: 42px;
+                        margin: 0 auto;
+                        position: absolute;
+                        top: -4px;
+                        width: 100%;
+                        z-index: -1;
+                        @include respond-below(sm){
+                            background-image: url(#{$imgPath}/bg-label-mobile.svg);
+                            height: 32px;
+                        }
+                        @include respond-between(xs, sm){
+                            background-image: url(#{$imgPath}/bg-label-md-mobile.svg);
+                            height: 34px;
+                        }
+                    }
+                }
+            }
+            &__wrap{
+                border-bottom: 2px solid;
+                border-color: rgba(235, 236, 245, 0.6);
+                display: flex;
+                padding: 25px $indent-15;
+                justify-content: space-between;
+                @include respond-below(sm){
+                    padding: $indent-15 $indent-10;
+                }
+                &--title-card{
+                    align-items: center;
+                    display: flex;
+                    gap: $indent-10;
+                    @include respond-below(sm){
+                        gap: 9px;
+                        img{
+                            width: 17px;
+                        }
+                    }
+                    span{
+                        @include background-gradient;
+                        font-size: $header-txt;
+                        font-weight: $font-weight-500;
+                        @include respond-below(sm){
+                            @include mobile-header-text;
+                        }
+                    }
+                    i{
+                        @include background-gradient;
+                    }
+                    p{
+                        color: $header-txt-color;
+                        font-size: $header-txt;
+                        font-weight: $font-weight-500;  
+                        @include respond-below(sm){
+                            @include mobile-header-text;
+                        }
+                    }
+                }
+                &--reviews{
+                    align-items: center;
+                    display: flex;
+                    gap: 12px;
+                    @include respond-below(sm){
+                        gap: 11px;
+                    }
+                    p{
+                        color: $header-txt-color;
+                        font-size: $header-review-txt;
+                        font-weight: $font-weight-500; 
+                        @include respond-below(sm){
+                            @include mobile-header-text;
+                        }
+                    }
+                }
+                &--stars{
+                    i{
+                        color: $star-color;
+                        font-size: $header-txt;
+                        @include respond-below(sm){
+                            font-size: $font-icon;
+                            &:not(:first-child){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    .main-section{
+        display: flex;
+        padding: $indent-15;
+        @include respond-between(sm, lg){
+            flex-wrap: wrap;
+        }
+        @include respond-below(sm){
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: $indent-10;
+            &__logo{
+                width: 27%;
+            }
+        }
+        @include respond-between(xs, sm){
+            padding: 14px $indent-10;
+            &__logo{
+                width: 20%;
+            }
+        }
+        &__card-txt{
+            margin: 0 34px 0 18px;
+            @include respond-below(sm){
+                margin: 0 0 0 $indent-10;
+                width: 69%;
+            }
+            @include respond-between(xs, sm){
+                margin: 0 0 0 $indent-15;
+                width: 75%;
+            }
+            &--additional-txt{
+                display: flex;
+                gap: 7px;
+                @include respond-below(sm){
+                    display: none;
+                }
+                i{
+                    @include background-gradient;
+                }
+                p{
+                    color: $color-txt;
+                    font-size: $txt;
+                    font-weight: $font-weight-500;
+                }
+            }
+            h4{
+                color: $header-txt-color;
+                font-size: $font-size-h4;
+                padding: $indent-10 0;
+                @include respond-below(sm){
+                    font-size: $header-txt;
+                    line-height: 21px;
+                    margin-bottom: 7px;
+                    padding: 0;
+                }
+            }
+            &--main-txt{
+                @include txt-property;
+                line-height: 20px;
+                max-width: 284px;
+                @include respond-below(sm){
+                    max-width: 100%;
+                }
+            }
+        }
+        &__card-adv{
+            @include respond-below(sm){
+                &::before{
+                    background-color: $grey-button;
+                    content: '';
+                    display: block;
+                    margin: $indent-10 0 $indent-15;
+                    height: 2px;
+                    width: 100%;
+                }
+            }
+            @include respond-between(xs, sm){
+                &::before{
+                    margin: $indent-10 0 20px;
+                }
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                @include respond-below(sm){
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: $indent-10 $indent-15;
+                }
+                @include respond-between(xs, sm){
+                    gap: $indent-15 25px;
+                }
+                li{
+                    @include txt-property;
+                    list-style: none;
+                    white-space: nowrap;
+                    &:not(:last-child){
+                        margin-bottom: $indent-15;
+                    }
+                    @include respond-below(sm){
+                        &:nth-child(3){
+                            order: 1;
+                        }
+                        &:first-child{
+                            order: 2;
+                        }
+                        &:nth-child(4){
+                            order: 3;
+                        }
+                        &:nth-child(2){
+                            order: 4;
+                        }
+                    }
+                    @include respond-between(xs, sm){
+                        font-size: $txt;
+                        line-height: 17px;
+                    }
+                    &:before{
+                        content: '\f135';
+                        color: $marker-color;
+                        display: inline-block;
+                        font-size: $font-icon;
+                        font-family: 'FontAwesome';
+                        padding-right: $indent-10;
+                        @include respond-below(sm){
+                            font-size: $mobile-txt;
+                            padding-right: 5px;
+                        }
+                        @include respond-between(xs, sm){
+                            font-size: $font-icon;
+                            padding-right: $indent-10;
+                        }
+                    }
+                }
+            }
+        }
+        &__payments{
+            display: flex;
+            flex-direction: column;
+            padding: 0 78px 0 86px;
+            @include respond-between(sm, lg){
+                padding: 20px 78px 0 86px;
+            }
+            @include respond-below(sm){
+                flex-direction: column-reverse;
+                order: 5;
+                padding: 0;
+                width: 100%;
+            }
+            &--wrapper{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0 20px;
+                height: 106px;
+                width: 272px;  
+                @include respond-below(sm){
+                    display: none;
+                }
+            }
+            &--master{
+                background-image: url(#{$imgPath}/mastercard.svg);
+                background-repeat: no-repeat;
+                max-width: 52px;
+                width: 100%;
+            }
+            &--discover{
+                background-image: url(#{$imgPath}/discover.svg);
+                background-repeat: no-repeat;
+                max-width: 52px;
+                width: 100%;
+            }
+            &--express{
+                background-image: url(#{$imgPath}/express.svg);
+                background-repeat: no-repeat;
+                max-width: 52px;
+                width: 100%;
+            }
+            &--maestro{
+                background-image: url(#{$imgPath}/maestro.svg);
+                background-repeat: no-repeat;
+                max-width: 52px;
+                width: 100%;
+            }
+            &--union{
+                background-image: url(#{$imgPath}/union_pay.svg);
+                background-repeat: no-repeat;
+                max-width: 52px;
+                width: 100%;
+            }
+            &--jcb{
+                background-image: url(#{$imgPath}/jcb.svg);
+                background-repeat: no-repeat;
+                max-width: 52px;
+                width: 100%;
+            }
+            &--info-block{
+                margin: 5px 0 0;
+                @include respond-below(sm){
+                    margin: 0;
+                }
+                &__button{
+                    display: inline-block;
+                    position: relative;
+                    width: 100%;
+                    span{
+                        color: $more-info-txt;
+                        cursor: pointer;
+                        display: flex;
+                        font-size: $more-info-font;
+                        font-weight: $font-weight-400;
+                        justify-content: center;
+                        &::after{
+                            background-image: url(#{$imgPath}/angle-down.svg);
+                            background-repeat: no-repeat;
+                            content: '';
+                            display: block;
+                            height: 15px;
+                            position: relative;
+                            left: 9px;
+                            width: 15px;
+                        }
+                    }
+                    &.active{
+                        span{
+                            &::after{
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                    &::before{
+                        background: $hotizontal-line-bg;
+                        content:" ";
+                        display: block;
+                        height: 2px;
+                        left: 0;
+                        position: absolute;
+                        top: 50%;
+                        width: 86px;
+                        @include respond-between(xs, sm){
+                            width: 144px;
+                        }
+                    }
+                    &::after{
+                        background: $hotizontal-line-bg;
+                        content:" ";
+                        display: block;
+                        height: 2px;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        width: 86px;
+                        @include respond-between(xs, sm){
+                            width: 144px;
+                        }
+                    }
+                }
+            }
+        }
+        &__buttons{
+            display: flex;
+            flex-direction: column;
+            gap: $indent-15;
+            @include respond-between(sm, lg){
+                padding: 20px 0 0;
+            }
+            @include respond-below(sm){
+                flex-direction: column-reverse;
+                gap: $indent-10;                  
+                margin: $indent-15 0;
+                width: 100%;
+            }
+            @include respond-between(xs, sm){
+                flex-direction: row-reverse;
+                margin: 20px 0;
+            }
+            button{
+                border: 0;
+                border-radius: 10px;
+                cursor: pointer;
+                padding: 19px 50px;
+                white-space: nowrap;
+                @include respond-between(xs, sm){
+                    padding: $indent-15 58px;
+                    width: 50%;
+                }
+                span{
+                    font-size: $txt;
+                    font-weight: $font-weight-500;
+                    @include respond-below(sm){
+                        font-size: $mobile-txt;
+                    }
+                }
+                &.main-section__button-claim{
+                    background-color: $btn-and-advantages-bg;
+                    span{
+                        color: $color-white;
+                    }
+                    &:hover{
+                        background-color: $grey-button;
+                        &.main-section__button-claim{
+                            span{
+                                color: $font-color-button;
+                            }
+                        }
+                    }
+                }
+                &.main-section__button-review{
+                    background-color: $grey-button;
+                    span{
+                        color: $font-color-button;
+                    }
+                    &:hover{
+                        background-color: $btn-and-advantages-bg;
+                        &.main-section__button-claim{
+                            span{
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      }
+      &:nth-child(2){
+        .header-section{
+            &__label{
+                p{
+                    &::after{
+                        background-image: url(#{$imgPath}/orange-bg.svg);
+                        @include respond-below(sm){
+                            background-image: url(#{$imgPath}/bg-label-mobile.svg);
+                            height: 32px;
+                        }
+                        @include respond-between(xs, sm){
+                            background-image: url(#{$imgPath}/orange-bg-mobile.svg);
+                            height: 34px;
+                        }
+                    }
+                }
+            }
+        }
+      }
+      .section-panel{
+        display: none;
+        justify-content: space-between;
+        padding: $indent-15;
+        background-color: $panel-background;
+        @include respond-below(sm){
+            flex-direction: column;
+            gap: $indent-10;
+            padding: $indent-10;
+        }
+        @include respond-above(xs){
+            gap: $indent-15;
+        }
+        &__text{
+            p{
+                @include txt-property;
+                line-height: 25px;
+                max-width: 444px;
+                width: 100%;
+                @include respond-below(sm){
+                    font-size: $mobile-label-font;
+                    line-height: 15px;
+                    max-width: 100%;
+                }
+                @include respond-between(xs, sm){
+                    font-size: $mobile-txt;
+                    line-height: 20px;
+                }
+            }
+        }
+        &__advantages,
+        &__disadvantages{
+            border: 2px solid rgb(235, 236, 245);
+            border-radius: 15px;
+            ul{
+                margin: 0;
+                padding: 19px 20px 0;
+                @include respond-below(sm){
+                    padding: $indent-10;
+                }
+                li{
+                    @include txt-property;
+                    list-style: none;
+                    margin: 0 0 $indent-15;
+                    @include respond-below(sm){
+                        margin: 0 0 $indent-10 0;
+                    }
+                    &::before{
+                        content: '\f164';
+                        color: $btn-and-advantages-bg;
+                        display: inline-block;
+                        font-size: $font-icon;
+                        font-family: 'FontAwesome';
+                        padding-right: $indent-10;
+                        @include respond-below(sm){
+                            font-size: $txt;
+                            padding-right: 5px;
+                        }
+                    }
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        &__disadvantages{
+            ul{
+                li{
+                    &::before{
+                        content: '\f165';
+                        color: $disadvantages-icon-bg;
+                    }
+                }
+            }
+        }
+        &__mobile-payments{
+            display: none;
+            @include respond-below(sm){
+                background-image: url(#{$imgPath}/Payments.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: flex;
+                height: 24px;
+                width: 100%;
+            }
+            @include respond-between(xs, sm){
+                background-image: url(#{$imgPath}/Payments-md-mobile.svg);
+                height: 34px;
+            }
+        }
+      }
+      &[data-visible="open"]{
+        .main-section{
+            &__payments{
+                &--info-block{
+                    &__link-title{
+                        &::after{
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+        .section-panel{
+            display: flex;
+        }
+      }
+    }
+}

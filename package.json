@@ -1,0 +1,41 @@
+{
+  "name": "test",
+  "version": "4.0.2",
+  "description": "Test task",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "automation",
+    "template",
+    "html",
+    "css",
+    "sass",
+    "javascript"
+  ],
+  "author": "Kate Kovaliova",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "browser-sync": "^2.27.5",
+    "del": "^6.0.0",
+    "font-awesome": "^4.7.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-html": "^3.5.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-image": "^6.2.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.42.1"
+  },
+  "dependencies": {
+    "stylelint": "^13.13.1"
+  }
+}

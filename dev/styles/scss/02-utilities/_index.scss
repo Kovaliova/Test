@@ -1,0 +1,70 @@
+$imgPath :"/img";
+
+//Fonts
+$rubik-font: 'Rubik', sans-serif;
+
+//Font colors
+$header-txt-color: #313446;
+$star-color: #FF922E;
+$color-white: #ffffff;
+$color-txt: #72768D;
+$marker-color: #0079F0;
+$more-info-txt: #A6AAC3;
+$font-color-button: #6F728C;
+
+//Backgrounds
+$card-bg: rgb(247, 248, 253);
+$hotizontal-line-bg: #A6AAC3;
+$btn-and-advantages-bg: #53AF1B;
+$disadvantages-icon-bg: #FF4C34;
+$grey-button: #EBECF5;
+$panel-background: #F1F3FD;
+
+//Font-size
+$mobile-label-font: 10px;
+$mobile-txt: 12px;
+$more-info-font: 13px;
+$txt: 14px;
+$font-icon: 16px;
+$header-review-txt: 17px;
+$header-txt: 18px;
+$font-size-h4: 24px;
+
+
+//Font-weight
+$font-weight-400: 400;
+$font-weight-500: 500;
+
+
+$indent-10: 10px;
+$indent-15: 15px;
+
+
+//Mixins
+@mixin card-width{
+    background-color: $card-bg;
+    border-radius: 15px;
+    margin: 0 auto 15px;
+    max-width: 1320px;
+    width: 100%;
+}
+@mixin background-gradient{
+    background: linear-gradient(180.00deg, rgb(255, 199, 54),rgb(255, 99, 12));
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+@mixin txt-property{
+    color: $color-txt;
+    font-size: $txt;
+    font-weight: $font-weight-400;
+    line-height: 17px;
+    @include respond-below(sm){
+        font-size: $mobile-txt;
+        line-height: 14px;
+    }
+}
+@mixin mobile-header-text{
+    font-size: $txt;
+    font-weight: $font-weight-500;
+}

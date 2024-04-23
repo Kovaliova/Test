@@ -1,0 +1,1 @@
+"use strict";function togglePanel(e){var t=document.getElementById(e),i=t.getAttribute("data-visible"),n=t.querySelector(".main-section__payments--info-block__link-title");console.log("changeText",n),"open"===i?(t.setAttribute("data-visible","close"),n.innerText="More info"):(t.setAttribute("data-visible","open"),n.innerText="Hide info")}
